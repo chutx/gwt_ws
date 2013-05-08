@@ -1,2 +1,0 @@
-# Module com.training.architecture.java.gwt.ViewJUnit
-# RPC service class, partial path of RPC policy file
