@@ -15,9 +15,6 @@ public class CalculatorData implements CalculatorChangeNotifier {
 		this.clear();
 	}
 	
-	/**
-	 * @Override
-	 */
 	public void addChangeListener(CalculatorChangeListener listener) {
 		changeListener = listener;
 	}
