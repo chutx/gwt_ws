@@ -10,10 +10,20 @@
     <servlet-name>greetServlet</servlet-name>
     <servlet-class>com.training.gwt.ajaxgwt.server.GreetingServiceImpl</servlet-class>
   </servlet>
+  
+  <servlet>
+    <servlet-name>helloServlet</servlet-name>
+    <servlet-class>com.training.gwt.ajaxgwt.server.HelloServiceFacade</servlet-class>
+  </servlet>
 
   <servlet-mapping>
     <servlet-name>greetServlet</servlet-name>
     <url-pattern>/ajaxgwt/greet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>helloServlet</servlet-name>
+    <url-pattern>/ajaxgwt/hello</url-pattern>
   </servlet-mapping>
 
   <!-- Default page to serve -->

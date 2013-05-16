@@ -57,6 +57,8 @@
   <build>
     <!-- Generate compiled stuff in the folder used for developing mode -->
     <outputDirectory>${webappDirectory}/WEB-INF/classes</outputDirectory>
+    
+    <finalName>ajaxgwt</finalName>
 
     <plugins>
 
@@ -74,6 +76,13 @@
               <goal>generateAsync</goal>
             </goals>
           </execution>
+          <execution>
+            <id>mergewebxml</id>
+            <phase>process-classes</phase>
+            <goals>
+              <goal>mergewebxml</goal>
+            </goals>
+          </execution>   
         </executions>
         <!-- Plugin configuration. There are many available options, see 
           gwt-maven-plugin documentation at codehaus.org -->
@@ -81,6 +90,12 @@
           <runTarget>ajaxgwt.html</runTarget>
           <hostedWebapp>${webappDirectory}</hostedWebapp>
           <i18nMessagesBundle>com.training.gwt.ajaxgwt.client.Messages</i18nMessagesBundle>
+          <!-- The next three properties are for gwt:mergewebxml -->
+          <scanRemoteServiceRelativePathAnnotation>true</scanRemoteServiceRelativePathAnnotation>
+          <packageNamePerModule>
+			<ajaxgwt>com.training.gwt.ajaxgwt.client</ajaxgwt>
+          </packageNamePerModule>
+          <mergedWebXml>${project.build.directory}/${project.build.finalName}/WEB-INF/web.xml</mergedWebXml>
         </configuration>
       </plugin>
 
